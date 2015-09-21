@@ -31,7 +31,8 @@ Capybara.default_driver = :selenium_firefox
 #click_link_or_button 'Weather'
 #sleep 10
 
-Capybara.app_host = "http://192.168.1.xxx"
+# Capybara.app_host = "http://192.168.1.253"
+Capybara.app_host = "http://sruam.dyndns-home.com:8083"
 visit('/PC')
 sleep 10 
 fill_in 'user', :with => "xxx"
@@ -47,12 +48,13 @@ sleep 10
 #sleep 1
 #page.driver.browser.action.key_down(:control).send_keys("+").perform
 #sleep 1
+loop do
+visit('/PC')
 page.all('html').execute_script("$('td').css('font-size','30px');")
 page.all('html').execute_script("$('p').css('font-size','30px');")
 page.all('html').execute_script("$('strong').css('font-size','40px');")
 page.all('html').execute_script("$('strong').css('font-color','red');")
 
-loop do
   sleep 10
   find('h3#ui-accordion-accordion-header-1').click
   sleep 10
@@ -61,5 +63,9 @@ loop do
   find('h3#ui-accordion-accordion-header-3').click
   sleep 10
   find('h3#ui-accordion-accordion-header-0').click
+  visit('http://localhost/1.jpg')
+  sleep 10
+  visit('http://localhost/2.jpg')
+  sleep 10
 end
 
