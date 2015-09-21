@@ -5,4 +5,5 @@ xset s noblank # don't blank the video device
 unclutter &
 matchbox-window-manager &
 cd /home/pi/imotif/ruby
-./test.rb
+#./test.rb
+./runds2.rb
